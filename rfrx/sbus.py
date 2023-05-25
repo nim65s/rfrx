@@ -67,7 +67,7 @@ class SbusDecoder:
 
     def __str__(self):
         """Show decoded data."""
-        ret = " ".join(f"{c:4i}" for c in self.chans)
+        ret = " ".join(f"{c:4}" for c in self.chans)
         ret += f"{self.failsafe} {self.frame_lost} {self.ch18} {self.ch17}"
         return ret
 
