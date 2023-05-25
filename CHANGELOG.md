@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- protronik: rename h/v → x/y
 - configuration through `RFRX_` environment variables
 - configure log level if no root logging handler is defined
 - add release script
