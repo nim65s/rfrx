@@ -71,6 +71,6 @@ class ProTronikDecoder(SbusDecoder):
 
 
 class ProTronikReader(SbusReader):
-    """Bind to a serial port, read SBUS frames and process them."""
+    """Bind to a serial port, read SBUS pro-tronik frames and process them."""
 
     decoder = ProTronikDecoder

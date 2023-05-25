@@ -5,12 +5,12 @@ from time import sleep
 
 import serial
 
-LOGGER = getLogger("protronik.sbus")
+LOGGER = getLogger("rfrx.sbus")
 
-FALSY = ("0", "NO", "OFF", "FALSE")
+_FALSY = ("0", "NO", "OFF", "FALSE")
 PORT = environ.get("RFRX_PORT", "/dev/ttyS0")
-RUNNING = environ.get("RFRX_RUNNING", "ON") not in FALSY
-RETRY = environ.get("RFRX_RETRY", "ON") not in FALSY
+RUNNING = environ.get("RFRX_RUNNING", "ON") not in _FALSY
+RETRY = environ.get("RFRX_RETRY", "ON") not in _FALSY
 TIMEOUT = int(environ.get("RFRX_TIMEOUT", 1))
 N_CHANS = int(environ.get("RFRX_N_CHANS", 16))
 LOG_LEVEL = environ.get("RFRX_LOG_LEVEL", "WARNING").upper()
@@ -31,8 +31,10 @@ class SbusDecoder:
         self.frame = frame
         self.val = int.from_bytes(frame, byteorder="little")
         if not (0 <= n_chans <= 16):
-            err = "Wrong number of channels. "
-            err += f"Expected 0 <= n_chans <= 16, got {n_chans}."
+            err = (
+                "Wrong number of channels. "
+                f"Expected 0 <= n_chans <= 16, got {n_chans}."
+            )
             raise ValueError(err)
         self.n_chans = n_chans
         self.chans = [None] * n_chans
@@ -76,9 +78,8 @@ class SbusDecoder:
 
     def __str__(self):
         """Show decoded data."""
-        ret = " ".join(f"{c:4}" for c in self.chans)
-        ret += f"{self.failsafe} {self.frame_lost} {self.ch18} {self.ch17}"
-        return ret
+        data = [*self.chans, self.failsafe, self.frame_lost, self.ch18, self.ch17]
+        return " ".join(f"{c:4}" for c in data)
 
 
 class SbusReader:
@@ -105,6 +106,7 @@ class SbusReader:
                 baudrate=100_000,
                 bytesize=serial.EIGHTBITS,
                 # TODO: broken on raspbian buster & pyserial 3.5
+                # works well on same setup but with pyserial 3.4…
                 # parity=serial.PARITY_EVEN,
                 stopbits=serial.STOPBITS_TWO,
                 timeout=self.timeout,
@@ -113,8 +115,10 @@ class SbusReader:
                     try:
                         data = ser.read(25)
                         if len(data) == 0:
-                            err = f"no data on {self.port} "
-                            err += f"in the last {self.timeout} seconds."
+                            err = (
+                                f"no data on {self.port} "
+                                f"in the last {self.timeout} seconds."
+                            )
                             LOGGER.warning(err)
                         else:
                             frame = self.decoder(data)
