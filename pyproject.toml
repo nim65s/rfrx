@@ -9,7 +9,7 @@ profile = "black"
 authors = ["Guilhem Saurel <guilhem.saurel@laas.fr>"]
 description = "Receive SBUS frames from pro-tronik remote controller"
 license = "BSD-2-Clauses"
-name = "protronik"
+name = "rfrx"
 readme = "README.md"
 version = "1.0.0"
 
