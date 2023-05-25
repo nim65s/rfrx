@@ -76,5 +76,9 @@ class ProTronikReader(SbusReader):
     decoder_class = ProTronikDecoder
 
 
-if __name__ == "__main__":
+def _main():
     ProTronikReader().run()
+
+
+if __name__ == "__main__":
+    _main()

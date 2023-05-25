@@ -115,5 +115,9 @@ class SbusReader:
         print(frame, frame.chans)
 
 
-if __name__ == "__main__":
+def _main():
     SbusReader().run()
+
+
+if __name__ == "__main__":
+    _main()

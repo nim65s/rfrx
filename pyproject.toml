@@ -26,6 +26,10 @@ isort = "^5.12.0"
 pre-commit = "^3.0.3"
 ruff = "^0.0.260"
 
+[tool.poetry.scripts]
+protronik = "rfrx.protronik:_main"
+sbus = "rfrx.sbus:_main"
+
 [tool.ruff]
 extend-ignore = ["D203", "D213"]
 extend-select = ["A", "B", "C", "COM", "D", "DJ", "EM", "EXE", "G", "N", "PTH", "RET", "RUF", "UP", "W", "YTT"]
