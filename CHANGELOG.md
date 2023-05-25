@@ -7,9 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.0.1] - 2023-05-25
+
+- fix Release
+
 ## [v1.0.0] - 2023-05-25
 
 - Initial Release
 
-[unreleased]: https://github.com/nim65s/rfrx/compare/v1.0.0...HEAD
+[unreleased]: https://github.com/nim65s/rfrx/compare/v1.0.1...HEAD
+[v1.0.1]: https://github.com/nim65s/rfrx/compare/v1.0.0...v1.0.1
 [v1.0.0]: https://github.com/nim65s/rfrx/releases/tag/v1.0.0
