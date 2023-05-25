@@ -84,7 +84,7 @@ class SbusDecoder:
 class SbusReader:
     """Bind to a serial port, read SBUS frames and process them."""
 
-    decoder_class = SbusDecoder
+    decoder = SbusDecoder
 
     def __init__(self, port=PORT, running=RUNNING, retry=RETRY, timeout=TIMEOUT):
         """Configure the serial port parameters."""
@@ -117,7 +117,7 @@ class SbusReader:
                             err += f"in the last {self.timeout} seconds."
                             LOGGER.warning(err)
                         else:
-                            frame = self.decoder_class(data)
+                            frame = self.decoder(data)
                             self.process(frame)
                     except SbusError as e:
                         LOGGER.error(f"SBUS error: {e}")
