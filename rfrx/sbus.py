@@ -92,7 +92,8 @@ class SbusReader:
                 port=self.port,
                 baudrate=100_000,
                 bytesize=serial.EIGHTBITS,
-                parity=serial.PARITY_EVEN,
+                # TODO: broken on raspbian buster & pyserial 3.5
+                # parity=serial.PARITY_EVEN,
                 stopbits=serial.STOPBITS_TWO,
                 timeout=self.timeout,
             ) as ser:
