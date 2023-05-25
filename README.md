@@ -31,15 +31,15 @@ Could be done in python calls, or by setting the following environment variables
 
 Minimum, Middle and Maximum values read on your Right and Left Horizontal and Vertical joysticks
 
-- `RFRX_RH_MIN`: default to 192
-- `RFRX_RH_MID`: default to 992
-- `RFRX_RH_MAX`: default to 1796
-- `RFRX_RV_MIN`: default to 302
-- `RFRX_RV_MID`: default to 1100
-- `RFRX_RV_MAX`: default to 1900
-- `RFRX_LV_MIN`: default to 180
-- `RFRX_LV_MID`: default to 980
-- `RFRX_LV_MAX`: default to 1779
-- `RFRX_LH_MIN`: default to 192
-- `RFRX_LH_MID`: default to 992
-- `RFRX_LH_MAX`: default to 1790
+- `RFRX_RX_MIN`: default to 192
+- `RFRX_RX_MID`: default to 992
+- `RFRX_RX_MAX`: default to 1796
+- `RFRX_RY_MIN`: default to 302
+- `RFRX_RY_MID`: default to 1100
+- `RFRX_RY_MAX`: default to 1900
+- `RFRX_LY_MIN`: default to 180
+- `RFRX_LY_MID`: default to 980
+- `RFRX_LY_MAX`: default to 1779
+- `RFRX_LX_MIN`: default to 192
+- `RFRX_LX_MID`: default to 992
+- `RFRX_LX_MAX`: default to 1790
