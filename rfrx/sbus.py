@@ -77,11 +77,13 @@ class SbusReader:
 
     decoder_class = SbusDecoder
 
-    def __init__(self, port="/dev/ttyS0", retry=True, timeout=1):
+    def __init__(self, port="/dev/ttyS0", retry=True, timeout=1, run=True):
         """Configure the serial port parameters."""
         self.port = port
         self.retry = retry
         self.timeout = timeout
+        if run:
+            self.run()
 
     def run(self):
         """Run main loop."""
@@ -113,11 +115,3 @@ class SbusReader:
     def process(self, frame):
         """Override this for your application."""
         print(frame, frame.chans)
-
-
-def _main():
-    SbusReader().run()
-
-
-if __name__ == "__main__":
-    _main()

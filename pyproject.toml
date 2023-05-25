@@ -27,8 +27,8 @@ pre-commit = "^3.0.3"
 ruff = "^0.0.260"
 
 [tool.poetry.scripts]
-protronik = "rfrx.protronik:_main"
-sbus = "rfrx.sbus:_main"
+protronik = "rfrx:ProTronikReader"
+sbus = "rfrx:SbusReader"
 
 [tool.ruff]
 extend-ignore = ["D203", "D213"]
