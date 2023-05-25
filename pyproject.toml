@@ -14,17 +14,18 @@ readme = "README.md"
 version = "1.0.0"
 
 [tool.poetry.dependencies]
-pyserial = "^3.5"
+pyserial = "<3.5"
 python = "^3.7"
 
 [tool.poetry.group.dev]
 optional = true
 
 [tool.poetry.group.dev.dependencies]
-black = "^23.1.0"
-isort = "^5.12.0"
-pre-commit = "^3.0.3"
-ruff = "^0.0.260"
+black = "^23.3.0"
+ipython = "<8"
+isort = "<5.12"
+pre-commit = "<3"
+ruff = "^0.0.270"
 
 [tool.poetry.scripts]
 protronik = "rfrx:ProTronikReader"
