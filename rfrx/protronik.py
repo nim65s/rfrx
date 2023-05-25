@@ -36,19 +36,19 @@ class ProTronikDecoder(SbusDecoder):
         """Decode SBUS, then parse it according to Pro-Tronik use."""
         super().__init__(frame, n_chans=6)
 
-        # calibration: position, mini, middle, maxi
+        # calibration: minimum, middle, maximum, name
         rh = RH_MIN, RH_MID, RH_MAX, "right horizontal"
         rv = RV_MIN, RV_MID, RV_MAX, "right vertical"
         lv = LV_MIN, LV_MID, LV_MAX, "left vertical"
         lh = LH_MIN, LH_MID, LH_MAX, "left horizontal"
 
-        def scale(val, mini, middle, maxi, pos):
+        def scale(val, mini, middle, maxi, name):
             """Convert read value to -1.0 -> 1.0."""
             if val < mini:
-                LOGGER.debug(f"{pos} value lower than min: {val} < {mini}")
+                LOGGER.debug(f"{name} value lower than min: {val} < {mini}")
                 return -1.0
             if val > maxi:
-                LOGGER.debug(f"{pos} value higher than max: {val} > {maxi}")
+                LOGGER.debug(f"{name} value higher than max: {val} > {maxi}")
                 return 1.0
             if val < middle:
                 return (val - mini) / (middle - mini) - 1.0
