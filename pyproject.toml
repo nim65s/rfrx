@@ -11,7 +11,7 @@ description = "Receive SBUS frames from pro-tronik remote controller"
 license = "BSD-2-Clauses"
 name = "rfrx"
 readme = "README.md"
-version = "1.0.0"
+version = "1.0.1"
 
 [tool.poetry.dependencies]
 pyserial = "^3.5"
