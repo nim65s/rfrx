@@ -77,17 +77,18 @@ class SbusReader:
 
     decoder_class = SbusDecoder
 
-    def __init__(self, port="/dev/ttyS0", retry=True, timeout=1, run=True):
+    def __init__(self, port="/dev/ttyS0", running=True, retry=True, timeout=1):
         """Configure the serial port parameters."""
         self.port = port
+        self.running = running
         self.retry = retry
         self.timeout = timeout
-        if run:
-            self.run()
+
+        self.run()
 
     def run(self):
         """Run main loop."""
-        while self.retry:
+        while self.running and self.retry:
             with serial.Serial(
                 port=self.port,
                 baudrate=100_000,
@@ -97,7 +98,7 @@ class SbusReader:
                 stopbits=serial.STOPBITS_TWO,
                 timeout=self.timeout,
             ) as ser:
-                while True:
+                while self.running:
                     try:
                         data = ser.read(25)
                         if len(data) == 0:

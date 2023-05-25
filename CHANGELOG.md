@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- add `SbusReader.running` parameter to stop main loop on request
+
 ## [v1.0.1] - 2023-05-25
 
 - fix Release
