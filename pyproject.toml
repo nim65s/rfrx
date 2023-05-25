@@ -14,7 +14,7 @@ readme = "README.md"
 version = "1.0.0"
 
 [tool.poetry.dependencies]
-pyserial = "<3.5"
+pyserial = "<3.6"
 python = "^3.7"
 
 [tool.poetry.group.dev]
