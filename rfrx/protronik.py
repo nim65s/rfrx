@@ -5,7 +5,7 @@ from os import environ
 
 from .sbus import SbusDecoder, SbusReader
 
-LOGGER = getLogger("protronik.protronik")
+LOGGER = getLogger("rfrx.protronik")
 
 RH_MIN, RH_MID, RH_MAX = (
     int(environ.get("RFRX_RH_MIN", 192)),
