@@ -1,5 +1,5 @@
 """Process SBUS data."""
-from logging import getLogger
+from logging import basicConfig, getLogger, root
 from os import environ
 from time import sleep
 
@@ -13,6 +13,7 @@ RUNNING = environ.get("RFRX_RUNNING", "ON") not in FALSY
 RETRY = environ.get("RFRX_RETRY", "ON") not in FALSY
 TIMEOUT = int(environ.get("RFRX_TIMEOUT", 1))
 N_CHANS = int(environ.get("RFRX_N_CHANS", 16))
+LOG_LEVEL = environ.get("RFRX_LOG_LEVEL", "WARNING").upper()
 
 
 class SbusError(Exception):
@@ -87,6 +88,8 @@ class SbusReader:
 
     def __init__(self, port=PORT, running=RUNNING, retry=RETRY, timeout=TIMEOUT):
         """Configure the serial port parameters."""
+        if len(root.handlers) == 0:
+            basicConfig(level=LOG_LEVEL)
         self.port = port
         self.running = running
         self.retry = retry

@@ -7,7 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- configuration through `RFRX_`_environment variables
+- configuration through `RFRX_` environment variables
+- configure log level if no root logging handler is defined
 
 ## [v1.1.0] - 2023-05-25
 

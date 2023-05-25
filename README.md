@@ -25,6 +25,7 @@ Could be done in python calls, or by setting the following environment variables
 - `RFRX_N_CHANS`: default to 16, number of useful channels for your case
 - `RFRX_RUNNING`: default to `ON`, to keep reading and procesing data
 - `RFRX_RETRY`: default to `ON`, to close and reopen the port again when something went wrong
+- `RFRX_LOG_LEVEL`: default to `WARNING`
 
 ### ProTronik
 
