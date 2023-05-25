@@ -1,0 +1,35 @@
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core"]
+
+[tool.isort]
+profile = "black"
+
+[tool.poetry]
+authors = ["Guilhem Saurel <guilhem.saurel@laas.fr>"]
+description = "Receive SBUS frames from pro-tronik remote controller"
+license = "BSD-2-Clauses"
+name = "protronik"
+readme = "README.md"
+version = "1.0.0"
+
+[tool.poetry.dependencies]
+pyserial = "^3.5"
+python = "^3.7"
+
+[tool.poetry.group.dev]
+optional = true
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.1.0"
+isort = "^5.12.0"
+pre-commit = "^3.0.3"
+ruff = "^0.0.260"
+
+[tool.ruff]
+extend-ignore = ["D203", "D213"]
+extend-select = ["A", "B", "C", "COM", "D", "DJ", "EM", "EXE", "G", "N", "PTH", "RET", "RUF", "UP", "W", "YTT"]
+target-version = "py37"
+
+[tool.tomlsort]
+all = true
