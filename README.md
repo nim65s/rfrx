@@ -13,3 +13,32 @@ Available Decoder / Readers:
 - Pro-Tronik PTR-6A v2
 
 :warning: Don't forget to invert its electrical signal, eg. with a NAND gate ! :warning:
+
+## Configuration
+
+Could be done in python calls, or by setting the following environment variables:
+
+### SBUS
+
+- `RFRX_PORT`: default to `/dev/ttyS0`
+- `RFRX_TIMEOUT`: default to 1
+- `RFRX_N_CHANS`: default to 16, number of useful channels for your case
+- `RFRX_RUNNING`: default to `ON`, to keep reading and procesing data
+- `RFRX_RETRY`: default to `ON`, to close and reopen the port again when something went wrong
+
+### ProTronik
+
+Minimum, Middle and Maximum values read on your Right and Left Horizontal and Vertical joysticks
+
+- `RFRX_RH_MIN`: default to 192
+- `RFRX_RH_MID`: default to 992
+- `RFRX_RH_MAX`: default to 1796
+- `RFRX_RV_MIN`: default to 302
+- `RFRX_RV_MID`: default to 1100
+- `RFRX_RV_MAX`: default to 1900
+- `RFRX_LV_MIN`: default to 180
+- `RFRX_LV_MID`: default to 980
+- `RFRX_LV_MAX`: default to 1779
+- `RFRX_LH_MIN`: default to 192
+- `RFRX_LH_MID`: default to 992
+- `RFRX_LH_MAX`: default to 1790

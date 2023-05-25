@@ -1,10 +1,18 @@
 """Process SBUS data."""
 from logging import getLogger
+from os import environ
 from time import sleep
 
 import serial
 
 LOGGER = getLogger("protronik.sbus")
+
+FALSY = ("0", "NO", "OFF", "FALSE")
+PORT = environ.get("RFRX_PORT", "/dev/ttyS0")
+RUNNING = environ.get("RFRX_RUNNING", "ON") not in FALSY
+RETRY = environ.get("RFRX_RETRY", "ON") not in FALSY
+TIMEOUT = int(environ.get("RFRX_TIMEOUT", 1))
+N_CHANS = int(environ.get("RFRX_N_CHANS", 16))
 
 
 class SbusError(Exception):
@@ -16,7 +24,7 @@ class SbusError(Exception):
 class SbusDecoder:
     """Decode SBUS frames."""
 
-    def __init__(self, frame, n_chans=16):
+    def __init__(self, frame, n_chans=N_CHANS):
         """Parse a frame with `n_chans` used channels."""
         LOGGER.info("parsing frame")
         self.frame = frame
@@ -77,7 +85,7 @@ class SbusReader:
 
     decoder_class = SbusDecoder
 
-    def __init__(self, port="/dev/ttyS0", running=True, retry=True, timeout=1):
+    def __init__(self, port=PORT, running=RUNNING, retry=RETRY, timeout=TIMEOUT):
         """Configure the serial port parameters."""
         self.port = port
         self.running = running

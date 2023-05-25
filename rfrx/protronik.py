@@ -8,24 +8,24 @@ from .sbus import SbusDecoder, SbusReader
 LOGGER = getLogger("protronik.protronik")
 
 RH_MIN, RH_MID, RH_MAX = (
-    int(environ.get("RH_MIN", 192)),
-    int(environ.get("RH_MID", 992)),
-    int(environ.get("RH_MAX", 1796)),
+    int(environ.get("RFRX_RH_MIN", 192)),
+    int(environ.get("RFRX_RH_MID", 992)),
+    int(environ.get("RFRX_RH_MAX", 1796)),
 )
 RV_MIN, RV_MID, RV_MAX = (
-    int(environ.get("RV_MIN", 302)),
-    int(environ.get("RV_MID", 1100)),
-    int(environ.get("RV_MAX", 1900)),
+    int(environ.get("RFRX_RV_MIN", 302)),
+    int(environ.get("RFRX_RV_MID", 1100)),
+    int(environ.get("RFRX_RV_MAX", 1900)),
 )
 LV_MIN, LV_MID, LV_MAX = (
-    int(environ.get("LV_MIN", 180)),
-    int(environ.get("LV_MID", 980)),
-    int(environ.get("LV_MAX", 1779)),
+    int(environ.get("RFRX_LV_MIN", 180)),
+    int(environ.get("RFRX_LV_MID", 980)),
+    int(environ.get("RFRX_LV_MAX", 1779)),
 )
 LH_MIN, LH_MID, LH_MAX = (
-    int(environ.get("LH_MIN", 192)),
-    int(environ.get("LH_MID", 992)),
-    int(environ.get("LH_MAX", 1790)),
+    int(environ.get("RFRX_LH_MIN", 192)),
+    int(environ.get("RFRX_LH_MID", 992)),
+    int(environ.get("RFRX_LH_MAX", 1790)),
 )
 
 

@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- configuration through `RFRX_`_environment variables
+
 ## [v1.1.0] - 2023-05-25
 
 - add `SbusReader.running` parameter to stop main loop on request
