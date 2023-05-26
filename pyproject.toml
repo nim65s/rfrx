@@ -8,7 +8,8 @@ profile = "black"
 [tool.poetry]
 authors = ["Guilhem Saurel <guilhem.saurel@laas.fr>"]
 description = "Receive RF frames from SBUS and Pro-Tronik PTR-6A v2"
-license = "BSD-2-Clauses"
+homepage = "https://github.com/nim65s/rfrx"
+license = "BSD-2-Clause"
 name = "rfrx"
 readme = "README.md"
 version = "2.0.0"
@@ -31,6 +32,9 @@ ruff = "^0.0.270"
 [tool.poetry.scripts]
 protronik = "rfrx:ProTronikReader"
 sbus = "rfrx:SbusReader"
+
+[tool.poetry.urls]
+changelog = "https://github.com/nim65s/rfrx/blob/main/CHANGELOG.md"
 
 [tool.ruff]
 extend-ignore = ["D203", "D213"]
