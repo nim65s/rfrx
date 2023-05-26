@@ -11,7 +11,7 @@ description = "Receive RF frames from SBUS and Pro-Tronik PTR-6A v2"
 license = "BSD-2-Clauses"
 name = "rfrx"
 readme = "README.md"
-version = "1.1.0"
+version = "2.0.0"
 
 [tool.poetry.dependencies]
 pyserial = "^3.5"
