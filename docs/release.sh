@@ -13,7 +13,7 @@ DATE=$(date +%Y-%m-%d)
 
 sed -i "/^## \[Unreleased\]/a \\\n## [v$NEW] - $DATE" CHANGELOG.md
 sed -i "/^\[Unreleased\]/s/$OLD/$NEW/" CHANGELOG.md
-sed -i "/^\[Unreleased\]/a [v$NEW]: https://github.com/nim65s/dmdm/compare/v$OLD...v$NEW" CHANGELOG.md
+sed -i "/^\[Unreleased\]/a [v$NEW]: https://github.com/nim65s/rfrx/compare/v$OLD...v$NEW" CHANGELOG.md
 
 git add pyproject.toml CHANGELOG.md
 git commit -m "Release v$NEW"
