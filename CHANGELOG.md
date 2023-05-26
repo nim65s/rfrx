@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v2.1.0] - 2023-05-26
+
 - add unittests with a couple real frames from pro-tronik
 - add urls to pyproject
 
