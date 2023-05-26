@@ -7,7 +7,7 @@ profile = "black"
 
 [tool.poetry]
 authors = ["Guilhem Saurel <guilhem.saurel@laas.fr>"]
-description = "Receive SBUS frames from pro-tronik remote controller"
+description = "Receive RF frames from SBUS and Pro-Tronik PTR-6A v2"
 license = "BSD-2-Clauses"
 name = "rfrx"
 readme = "README.md"
