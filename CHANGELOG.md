@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- setup coverage
+
 ## [v2.1.2] - 2023-05-26
 
 - changelog: typo
