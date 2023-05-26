@@ -1,5 +1,6 @@
 # rfrx
 
+[![Test](https://github.com/nim65s/rfrx/actions/workflows/test.yml/badge.svg)](https://github.com/nim65s/rfrx/actions/workflows/test.yml)
 [![Release](https://github.com/nim65s/rfrx/actions/workflows/release.yml/badge.svg)](https://github.com/nim65s/rfrx/actions/workflows/release.yml)
 [![PyPI version](https://badge.fury.io/py/rfrx.svg)](https://pypi.org/project/rfrx)
 [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/nim65s/rfrx/main.svg)](https://results.pre-commit.ci/latest/github/nim65s/rfrx/main)
