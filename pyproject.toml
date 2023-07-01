@@ -27,7 +27,7 @@ coverage = "^7.2.6"
 ipython = "^7"
 isort = "^5.11"
 pre-commit = "^2"
-ruff = "^0.0.270"
+ruff = ">=0.0.270,<0.0.276"
 
 [tool.poetry.scripts]
 protronik = "rfrx:ProTronikReader"
