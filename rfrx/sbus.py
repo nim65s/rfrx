@@ -1,4 +1,5 @@
 """Process SBUS data."""
+
 from logging import basicConfig, getLogger, root
 from os import environ
 from time import sleep
