@@ -1,4 +1,5 @@
 """Test pro-tronik decoder."""
+
 from unittest import TestCase
 
 from rfrx.protronik import ProTronikDecoder

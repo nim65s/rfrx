@@ -1,4 +1,5 @@
 """Test sbus decoder."""
+
 from unittest import TestCase
 
 from rfrx.sbus import SbusDecoder

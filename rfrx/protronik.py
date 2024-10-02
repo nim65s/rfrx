@@ -45,10 +45,10 @@ class ProTronikDecoder(SbusDecoder):
         def scale(val, mini, middle, maxi, name):
             """Convert read value to -1.0 -> 1.0."""
             if val < mini:
-                LOGGER.debug(f"{name} value lower than min: {val} < {mini}")
+                LOGGER.debug("%s value lower than min: %i < %i", name, val, mini)
                 return -1.0
             if val > maxi:
-                LOGGER.debug(f"{name} value higher than max: {val} > {maxi}")
+                LOGGER.debug("%s value higher than max: %i > %i", name, val, maxi)
                 return 1.0
             if val < middle:
                 return (val - mini) / (middle - mini) - 1.0
