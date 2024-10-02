@@ -45,13 +45,13 @@ class SbusDecoder:
         self.ch18 = None
 
         self.check()
-        LOGGER.debug(f"0x{self.val:025x}")
+        LOGGER.debug("0x%(025x)", self.val)
         self.parse()
-        LOGGER.debug("chans: %s" % self.chans)
-        LOGGER.debug("failsafe: %s" % self.failsafe)
-        LOGGER.debug("frame lost: %s" % self.frame_lost)
-        LOGGER.debug("ch 18: %s" % self.ch18)
-        LOGGER.debug("ch 17: %s" % self.ch17)
+        LOGGER.debug("chans: %s", self.chans)
+        LOGGER.debug("failsafe: %s", self.failsafe)
+        LOGGER.debug("frame lost: %s", self.frame_lost)
+        LOGGER.debug("ch 18: %s", self.ch18)
+        LOGGER.debug("ch 17: %s", self.ch17)
 
     def check(self):
         """Check if the frame is in correct format."""
@@ -125,7 +125,7 @@ class SbusReader:
                             frame = self.decoder(data)
                             self.process(frame)
                     except SbusError as e:
-                        LOGGER.error(f"SBUS error: {e}")
+                        LOGGER.error("SBUS error: %s", e)
                         break
             LOGGER.warning("sleeping a bit.")
             sleep(1)
