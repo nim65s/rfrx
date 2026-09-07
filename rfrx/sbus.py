@@ -20,8 +20,6 @@ LOG_LEVEL = environ.get("RFRX_LOG_LEVEL", "WARNING").upper()
 class SbusError(Exception):
     """Exception class for SbusDecoder."""
 
-    pass
-
 
 class SbusDecoder:
     """Decode SBUS frames."""
